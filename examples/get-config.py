@@ -27,23 +27,23 @@ class Closure:
     def dump(self):
         print ("Servers:")
         for item in self.servers:
-            print("\t{0}".format(item))
+            print(("\t{0}".format(item)))
 
         print ("Databases:")
         for item in self.databases:
-            print("\t{0}".format(item))
+            print(("\t{0}".format(item)))
 
         print ("Users:")
         for item in self.users:
-            print("\t{0}".format(item))
+            print(("\t{0}".format(item)))
 
         print ("Roles:")
         for item in self.roles:
-            print("\t{0}".format(item))
+            print(("\t{0}".format(item)))
 
         print ("Privileges:")
         for item in self.privileges:
-            print("\t{0}".format(item))
+            print(("\t{0}".format(item)))
 
     def close(self, conn, group='Default'):
         closed = False
@@ -322,6 +322,6 @@ if args.uri_privilege:
 closure.close(conn)
 
 if args.json:
-    print(json.dumps(closure.marshal()))
+    print((json.dumps(closure.marshal())))
 else:
     closure.dump()

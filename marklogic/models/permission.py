@@ -24,7 +24,7 @@
 Classes for manipulating MarkLogic permissions.
 """
 
-from __future__ import unicode_literals, print_function, absolute_import
+
 
 import requests
 from marklogic.models.utilities.validators import *

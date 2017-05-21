@@ -24,7 +24,7 @@
 Host related classes for manipulating MarkLogic hosts
 """
 
-from __future__ import unicode_literals, print_function, absolute_import
+
 import requests
 import json
 
@@ -117,7 +117,7 @@ class Host:
           .format(connection.host, connection.management_port)
 
         response = requests.get(uri, auth=connection.auth,
-                                headers={u'accept': u'application/json'})
+                                headers={'accept': 'application/json'})
 
         if response.status_code == 200:
             response_json = json.loads(response.text)

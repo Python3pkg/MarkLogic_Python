@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals, print_function, absolute_import
+
 
 #
 # Copyright 2015 MarkLogic Corporation
@@ -66,10 +66,10 @@ class TestUser(unittest.TestCase):
     def test_add_role(self):
         user = User("foo-user")
 
-        user.add_role(u'manage-user')
+        user.add_role('manage-user')
 
         role = user.roles_names()[0]
-        self.assertEqual(u'manage-user', role)
+        self.assertEqual('manage-user', role)
 
     def test_create_remove_user(self):
         connection = Connection.make_connection(tc.hostname, tc.admin, tc.password)

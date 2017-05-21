@@ -26,13 +26,12 @@ from marklogic.models.utilities.validators import validate_index_invalid_value_a
 from marklogic.models.utilities.validators import validate_boolean
 from marklogic.models.utilities.validators import validate_collation
 
-class _Index:
+class _Index(metaclass=ABCMeta):
     """
     Defines a MarkLogic index.
 
     This is an abstract class.
     """
-    __metaclass__ = ABCMeta
 
     def range_value_positions(self):
         """
@@ -78,13 +77,12 @@ class _Index:
         self._config['invalid-values'] = invalid
         return self
 
-class _RangeIndex(_Index):
+class _RangeIndex(_Index, metaclass=ABCMeta):
     """
     Defines a MarkLogic range index.
 
     This is an abstract class.
     """
-    __metaclass__ = ABCMeta
 
     def scalar_type(self):
         """
@@ -135,13 +133,12 @@ class _RangeIndex(_Index):
         self._config['collation'] = collation
         return self
 
-class _LocalNameIndex():
+class _LocalNameIndex(metaclass=ABCMeta):
     """
     A mixin for indexes that have local names.
 
     This is an abstract class.
     """
-    __metaclass__ = ABCMeta
 
     def namespace_uri(self):
         """
@@ -187,13 +184,12 @@ class _LocalNameIndex():
         self._config['localname'] = localname
         return self
 
-class _ParentNameIndex():
+class _ParentNameIndex(metaclass=ABCMeta):
     """
     A mixin for indexes that have parent names.
 
     This is an abstract class.
     """
-    __metaclass__ = ABCMeta
 
     def parent_namespace_uri(self):
         """
@@ -303,13 +299,12 @@ class AttributeRangeIndex(_RangeIndex, _LocalNameIndex, _ParentNameIndex):
         if collation is not None:
             self._config['collation'] = collation
 
-class _PathExpressionIndex():
+class _PathExpressionIndex(metaclass=ABCMeta):
     """
     A mixin for indexes that have path expressions.
 
     This is an abstract class.
     """
-    __metaclass__ = ABCMeta
 
     def path_expression(self):
         """
@@ -414,13 +409,12 @@ class FieldRangeIndex(_RangeIndex):
         self._config['field-name'] = field_name
         return self
 
-class _GeospatialIndex(_Index):
+class _GeospatialIndex(_Index, metaclass=ABCMeta):
     """
     Defines a MarkLogic geospatal index.
 
     This is an abstract class.
     """
-    __metaclass__ = ABCMeta
 
     def coordinate_system(self):
         """

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals, print_function, absolute_import
+
 
 #
 # Copyright 2015 MarkLogic Corporation
@@ -42,7 +42,7 @@ from marklogic.models.database.path import PathNamespace
 class TestPaths(unittest.TestCase):
 
     def test_create_paths(self):
-        db = Database(u'testdb')
+        db = Database('testdb')
 
         self.assertNotIn('path-namespaces', db._config)
         return_val = db.add_path_namespace(PathNamespace("inv", "http://foo.bar.com/invoice"))

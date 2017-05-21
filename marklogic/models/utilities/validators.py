@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals, print_function, absolute_import
+
 
 #
 # Copyright 2015 MarkLogic Corporation
@@ -83,7 +83,7 @@ def validate_integer_range(raw_val, min, max):
     """
     Validate an intenger in a range.
     """
-    if raw_val not in range(min, (1 + max)):
+    if raw_val not in list(range(min, (1 + max))):
         raise ValidationError("Integer value out of range", repr(raw_val))
 
 

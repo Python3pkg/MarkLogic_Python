@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals, print_function, absolute_import
+
 
 #
 # Copyright 2015 MarkLogic Corporation
@@ -191,7 +191,7 @@ class Forest:
         :return: The Forest object
         """
         uri = "http://{0}:{1}/manage/v2/forests/{2}?level=full".format(connection.host, connection.management_port,
-                                                                       self.config[u'forest-name'])
+                                                                       self.config['forest-name'])
         response = requests.delete(uri, auth=connection.auth)
 
         if response.status_code > 299 and not response.status_code == 404:

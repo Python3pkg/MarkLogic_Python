@@ -24,7 +24,7 @@
 Role related classes for manipulating MarkLogic roles
 """
 
-from __future__ import unicode_literals, print_function, absolute_import
+
 
 import requests
 from marklogic.models.utilities import exceptions

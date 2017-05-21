@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals, print_function, absolute_import
+
 
 #
 # Copyright 2015 MarkLogic Corporation
@@ -60,10 +60,10 @@ class TestPrivilege(unittest.TestCase):
     def test_add_role(self):
         privilege = Privilege("foo-privilege","http://example.com/","execute")
 
-        privilege.add_role_name(u'manage-admin')
+        privilege.add_role_name('manage-admin')
 
         role = privilege.role_names()[0]
-        self.assertEqual(u'manage-admin', role)
+        self.assertEqual('manage-admin', role)
 
     def test_create_remove_privilege(self):
         connection = Connection.make_connection(tc.hostname, tc.admin, tc.password)

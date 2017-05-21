@@ -53,9 +53,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'MarkLogic Python'
-copyright = u'2015, Paul Hoehne, Norman Walsh'
-author = u'Paul Hoehne, Norman Walsh'
+project = 'MarkLogic Python'
+copyright = '2015, Paul Hoehne, Norman Walsh'
+author = 'Paul Hoehne, Norman Walsh'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -229,8 +229,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'MarkLogicPython.tex', u'MarkLogic Python Documentation',
-   u'Paul Hoehne, Norman Walsh', 'manual'),
+  (master_doc, 'MarkLogicPython.tex', 'MarkLogic Python Documentation',
+   'Paul Hoehne, Norman Walsh', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -259,7 +259,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'marklogicpython', u'MarkLogic Python Documentation',
+    (master_doc, 'marklogicpython', 'MarkLogic Python Documentation',
      [author], 1)
 ]
 
@@ -273,7 +273,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'MarkLogicPython', u'MarkLogic Python Documentation',
+  (master_doc, 'MarkLogicPython', 'MarkLogic Python Documentation',
    author, 'MarkLogicPython', 'One line description of project.',
    'Miscellaneous'),
 ]

@@ -25,7 +25,7 @@
 Classes for manipulating MarkLogic privileges.
 """
 
-from __future__ import unicode_literals, print_function, absolute_import
+
 
 import requests
 from marklogic.models.utilities import exceptions
@@ -105,9 +105,9 @@ class Privilege(PropertyLists):
 
         :return: The list of role names
         """
-        if u'role' not in self._config:
+        if 'role' not in self._config:
             return None
-        return self._config[u'role']
+        return self._config['role']
 
     def set_role_names(self, roles):
         """

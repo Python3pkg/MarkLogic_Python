@@ -37,5 +37,5 @@ def walk_directories(current_directory):
         if stat.S_ISDIR(mode):
             file_list.extend(walk_directories(pathname))
         else:
-            file_list.append({u'filename': dir, u'partial-directory': pathname})
+            file_list.append({'filename': dir, 'partial-directory': pathname})
     return file_list

@@ -24,19 +24,18 @@
 Various utility classes.
 """
 
-from __future__ import unicode_literals, print_function, absolute_import
+
 from abc import ABCMeta, abstractmethod
 from marklogic.models.utilities.validators import validate_type
 from marklogic.models.utilities.validators import validate_list_of_type
 from marklogic.models.utilities.validators import assert_list_of_type
 
-class PropertyLists:
+class PropertyLists(metaclass=ABCMeta):
     """
     The PropertyLists class is an abstract, mixin class. It defines
     methods for adding, removing and setting the values of a list
     property on an object.
     """
-    __metaclass__ = ABCMeta
 
     def _add_to_object_list(self, objlist, obj, objtype):
         """

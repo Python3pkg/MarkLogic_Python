@@ -24,7 +24,7 @@
 Database related classes for manipulating MarkLogic databases
 """
 
-from __future__ import unicode_literals, print_function, absolute_import
+
 
 import sys
 
@@ -3223,7 +3223,7 @@ class Database(PropertyLists):
         # unicode doesn't exist in Python 3
         if sys.version_info[0] < 3:
             for forest_info in self._config['forest']:
-                if isinstance(forest_info, str) or isinstance(forest_info, unicode):
+                if isinstance(forest_info, str) or isinstance(forest_info, str):
                     new_forest = Forest(forest_info, host=self.hostname)
                     new_forest.create(connection)
                     forest_names.append(forest_info)

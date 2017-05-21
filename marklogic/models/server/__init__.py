@@ -36,7 +36,7 @@ from marklogic.models.server.namespace import UsingNamespace, Namespace
 from marklogic.models.server.requestblackout import RequestBlackout
 from marklogic.models.server.module import ModuleLocation
 
-class Server(PropertyLists):
+class Server(PropertyLists, metaclass=ABCMeta):
     """
     The Server class encapsulates a MarkLogic application server. It provides
     methods to set/get common attributes.  The use of methods will
@@ -45,7 +45,6 @@ class Server(PropertyLists):
     Server is the base class for all of the actual server types:
     HttpServer, OdbcServer, XdbcServer, and WebDAVServer.
     """
-    __metaclass__ = ABCMeta
 
     def address(self):
         """
@@ -1607,7 +1606,7 @@ class Server(PropertyLists):
                      .format(name,group))
 
         response = requests.get(uri, auth=connection.auth,
-                                headers={u'accept': u'application/json'})
+                                headers={'accept': 'application/json'})
 
         if response.status_code > 299 and not response.status_code == 404:
             raise UnexpectedManagementAPIResponse(response.text)

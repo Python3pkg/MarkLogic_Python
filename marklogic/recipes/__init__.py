@@ -78,7 +78,7 @@ class SimpleDatabase(Quickstart):
         server.create(conn)
 
         return {
-            u'content': data_database,
-            u'modules': modules_database,
-            u'server': server
+            'content': data_database,
+            'modules': modules_database,
+            'server': server
         }
